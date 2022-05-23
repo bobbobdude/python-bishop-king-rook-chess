@@ -10,6 +10,9 @@ def test_locatio2index1():
 
 def test_index2location1():
     assert index2location(5,2) == "e2"
+    assert index2location(26,26) == "z26"
+    assert index2location(1,1) == "a1"
+    assert index2location(7,26) == "g26" 
 
 wb1 = Bishop(1,1,True)
 wr1 = Rook(1,2,True)
