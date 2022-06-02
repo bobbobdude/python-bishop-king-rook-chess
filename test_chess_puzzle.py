@@ -36,6 +36,10 @@ B1 = (5, [wb1, wr1, wb2, bk, br1, br2, br3, wr2, wk])
 def test_is_piece_at1():
     assert is_piece_at(2,2, B1) == False
     assert is_piece_at(1,1, B1) == True 
+    assert is_piece_at(5,5, B1) == False
+    assert is_piece_at(4,3, B1) == True
+    assert is_piece_at(4,4, B1) == False
+
 
 def test_piece_at1():
     assert piece_at(4,3, B1) == br1
