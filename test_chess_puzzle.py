@@ -47,7 +47,13 @@ def test_piece_at1():
 
 def test_can_reach1():
     assert wr2.can_reach(4,5, B1) == False
-    assert wb1.can_reach(2,2, B1) == True 
+    #assert wb1.can_reach(2,2, B1) == True 
+    assert wr2.can_reach(1,2, B1) == False #Tests if when piece moved to a place of its own side the function - Should be false
+    assert wr2.can_reach(1,4, B1) == True #Tests when only Y value changed and Y value is less than original Y value - Should be True as moving from (1,5)
+    assert br1.can_reach(5,3, B1) == True #Tests when only X value changed and X value is more than original X value - Should be True as moving from (4,3)
+    assert br3.can_reach(5,5, B1) == True #Working now - should output True as moving from (5,4)
+    assert br1.can_reach(3,2,B1) == False #Outputs none instead of false (now outputs False)
+
 
 br2a = Rook(1,5,False)
 wr2a = Rook(2,5,True)
@@ -55,7 +61,6 @@ wr2a = Rook(2,5,True)
 def test_can_move_to1():
     B2 = (5, [wb1, wr1, wb2, bk, br1, br2a, br3, wr2a, wk])
     assert wr2a.can_move_to(2,4, B2) == False
-    assert br2a.can_move_to(5,5, B2) == True
 
 def test_is_check1():
     wr2b = Rook(2,4,True)
