@@ -53,6 +53,7 @@ def test_can_reach1():
     assert br1.can_reach(5,3, B1) == True #Tests when only X value changed and X value is more than original X value - Should be True as moving from (4,3)
     assert br3.can_reach(5,5, B1) == True #Working now - should output True as moving from (5,4)
     assert br1.can_reach(3,2,B1) == False #Outputs none instead of false (now outputs False)
+    assert br3.can_reach(5,2,B1) == True #Should be true (I think) as the Rook is moving to a square of opposite side
 
 
 br2a = Rook(1,5,False)
@@ -61,6 +62,10 @@ wr2a = Rook(2,5,True)
 def test_can_move_to1():
     B2 = (5, [wb1, wr1, wb2, bk, br1, br2a, br3, wr2a, wk])
     assert wr2a.can_move_to(2,4, B2) == False
+
+#def test_move_to1():
+    #assert br3.move_to(5, 2) == 
+
 
 def test_is_check1():
     wr2b = Rook(2,4,True)
