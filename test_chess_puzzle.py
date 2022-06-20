@@ -55,7 +55,12 @@ def test_can_reach1():
     assert br3.can_reach(5,5, B1) == True #Working now - should output True as moving from (5,4)
     assert br1.can_reach(3,2,B1) == False #Outputs none instead of false (now outputs False)
     assert br3.can_reach(5,2,B1) == True #Should be true (I think) as the Rook is moving to a square of opposite side
-    assert wb2.can_reach(4,3,B1) == True  #Tests if when piece moved to opposite side location with legal move returns True
+    assert wb2.can_reach(4, 3, B1) == True #Should be true as moves up diagonally to a cell that contains a Black rook br1 - origin (5,2)
+    assert wb2.can_reach(4, 1, B1) == True #Should be true as moves down diagonally to an empty space - origin (5,2)
+    assert wb2.can_reach(4, 2, B1) == False #Should be false as moves sideways and not diagonally - origin (5,2)
+    assert wb1.can_reach(5, 5, B1) == True #Should be true as moves up diagonally through multiple empty cells - origin (1,1)
+    assert wb1.can_reach(5, 4, B1) == False #Should be false as moves non diagonally - origin (1,1)
+    assert wb2.can_reach(3, 4, B1) == False #Should be false as moves up diagonally past a cell that contains a Black rook br1 - origin (5,2)
 
 
 br2a = Rook(1,5,False)
