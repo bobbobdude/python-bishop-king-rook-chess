@@ -61,6 +61,10 @@ def test_can_reach1():
     assert wb1.can_reach(5, 5, B1) == True #Should be true as moves up diagonally through multiple empty cells - origin (1,1)
     assert wb1.can_reach(5, 4, B1) == False #Should be false as moves non diagonally - origin (1,1)
     assert wb2.can_reach(3, 4, B1) == False #Should be false as moves up diagonally past a cell that contains a Black rook br1 - origin (5,2)
+    assert bk.can_reach(2,4,B1) == False #Should be false as the king moves to a space occupied by it's own side 
+    assert wk.can_reach(2,4,B1) == True #Should be true as the white king moves to a space occupied by a black rook
+    assert wk.can_reach(4,5,B1) == True #Should be true as king moves to an empty space 
+    assert wk.can_reach(5,5,B1) == False  #Should be false as king moves two cells sideways (can only move in a radius of one)
 
 
 br2a = Rook(1,5,False)
