@@ -82,7 +82,13 @@ def test_is_check1():
     wr2b = Rook(2,4,True)
     B2 = (5, [wb1, wr1, wb2, bk, br1, br2a, br3, wr2b, wk])
     assert is_check(True, B2) == True
+    assert is_check(False, B2) == True
+
+def test_is_check2():
+    wr2b = Rook(1,4, True)
+    B2 = (5, [wb1, wr1, wb2, bk, br1, br2a, br3, wr2b, wk])
     assert is_check(False, B2) == False
+
 
 def test_is_checkmate1():
     br2b = Rook(4,5,False)
