@@ -1,5 +1,4 @@
 import copy
-import pytest
 from chess_puzzle import *
 
 
