@@ -95,6 +95,26 @@ def test_is_checkmate1():
     assert is_checkmate(True, B2) == True
     assert is_checkmate(False, B2) == False
 
+def test_is_checkmate2():
+    wk3 = King(1,1, True)
+    wb3 = Bishop(4,2, True)
+
+    bk3 = King(4,3, False)
+    bb3 = Bishop(2,2, False)
+
+    B3 = (5, [wk3, wb3, bk3, bb3])
+
+    '''
+
+    |  |  |  |  |  |
+    |  |  |  |  |  |
+    |  |  |  |♚|  |
+    |  |♝|  |♗|  |
+    |♔|  |  |  |  |
+    '''
+    assert is_checkmate(True, B3) == True #Should equal True as Black Bishop can take White King
+    assert is_checkmate(False, B3) == False #Should equal False as no piece can reach Black King 
+
 def test_read_board1():
     B = read_board("board_examp.txt")
     assert B[0] == 5
