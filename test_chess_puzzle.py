@@ -74,7 +74,8 @@ def test_can_move_to1():
     assert wr2a.can_move_to(2,4, B2) == False
 
 def test_move_to1():
-    assert br3.move_to(5, 2, B1) == (5, [wb1, wr1, br3, bk, br1, br2, wr2, wk]) # Move to is not actually changing anything in the list - fix tommorow 
+    assert br3.move_to(5, 2, B1) == (5, [wb1, wr1, br3, bk, br1, br2, wr2, wk])
+    
 
 
 def test_is_check1():
