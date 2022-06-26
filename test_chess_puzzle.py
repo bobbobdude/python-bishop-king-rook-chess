@@ -2,7 +2,7 @@ import copy
 from chess_puzzle import *
 
 
-def test_locatio2index1():
+def test_location2index1():
     assert location2index("e2") == (5,2)
     assert location2index("z26") == (26,26)
     assert location2index("a1") == (1,1)
@@ -117,23 +117,23 @@ def test_is_checkmate2():
     assert is_checkmate(False, B3) == False #Should equal False as no piece can reach Black King 
 
 def test_read_board1():
-    B = read_board("board_examp.txt")
+    B = read_board(r"C:\Users\thoma\Documents\POP Coursework\csm090-pop-apr22-chess-puzzle-bobbobdude\csm090-pop-apr22-chess-puzzle-bobbobdude\board_examp.txt")
     assert B[0] == 5
 
     for piece in B[1]:  #we check if every piece in B is also present in B1; if not, the test will fail
         found = False
         for piece1 in B1[1]:
-            if piece.pos_x == piece1.pos_x and piece.pos_y == piece1.pos_y and piece.side == piece1.side and type(piece) == type(piece1):
+            if piece.pos_X == piece1.pos_X and piece.pos_Y == piece1.pos_Y and piece.side_ == piece1.side_ and type(piece) == type(piece1):
                 found = True
         assert found
 
     for piece1 in B1[1]: #we check if every piece in B1 is also present in B; if not, the test will fail
         found = False
         for piece in B[1]:
-            if piece.pos_x == piece1.pos_x and piece.pos_y == piece1.pos_y and piece.side == piece1.side and type(piece) == type(piece1):
+            if piece.pos_X == piece1.pos_X and piece.pos_Y == piece1.pos_Y and piece.side_ == piece1.side_ and type(piece) == type(piece1):
                 found = True
         assert found
-
+        
 def test_conf2unicode1():
     assert conf2unicode(B1) == "♖ ♔  \n ♜  ♜\n ♚ ♜ \n♖   ♗\n♗    "
     
